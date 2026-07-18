@@ -4,7 +4,7 @@ A quick-start guide for running ROS2 demo nodes and the Turtlesim simulator.
 
 ## Table of Contents
 - [Nodes: Talker/Listener Demo](#nodes-talkerlistener-demo)
-- [Create a new packge](#)
+- [Create a new packge](#create-a-new-packge)
 - [Turtlesim Setup](#turtlesim-setup)
 - [Controlling the Turtle](#controlling-the-turtle)
 - [Useful Commands](#useful-commands)

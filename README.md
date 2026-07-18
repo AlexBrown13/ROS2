@@ -4,6 +4,7 @@ A quick-start guide for running ROS2 demo nodes and the Turtlesim simulator.
 
 ## Table of Contents
 - [Nodes: Talker/Listener Demo](#nodes-talkerlistener-demo)
+- [Create a new packge](#)
 - [Turtlesim Setup](#turtlesim-setup)
 - [Controlling the Turtle](#controlling-the-turtle)
 - [Useful Commands](#useful-commands)
@@ -51,6 +52,46 @@ ros2 run demo_nodes_py listener
 ```
 
 ---
+
+## Create a new packge
+
+### Step 1: Go to your workspace source folder
+
+```bash
+cd ~/ros2_ws/src
+```
+
+### Step 2: Create a Python package
+
+```bash
+ros2 pkg create <package_name> --build-type ament_python --dependencies rclpy std_msgs
+```
+
+> **Note** Created package.xml, resource, test, setup.py, setup.cfg
+
+### Step 3: Build the workspace
+From the workspace root:
+
+```bash
+cd ~/ros2_ws
+colcon build --packages-select <package_name> --symlink-install
+```
+
+### Step 4: Source the workspace
+``` bash
+source install/setup.bash
+```
+
+To avoid sourcing every time, add it to your Dockerfile:
+
+``` bash
+echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
+```
+
+### Step 5: Verify the package
+```bash
+ros2 pkg list | grep <package_name>
+```
 
 ## Turtlesim Setup
 

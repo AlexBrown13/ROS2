@@ -1,11 +1,12 @@
 CONTAINER_NAME=ros2-container
-IMAGE_NAME=ros-humble-image
+IMAGE_NAME=ros2-container:v1
+#IMAGE_NAME=ros-humble-image
 
 
 docker run --rm -it \
     --net=host --ipc=host \
     --privileged \
-    --env="DISPLAY=$DISPLAY" \
+    --env="DISPLAY=host.docker.internal:0" \
     -v "$(pwd)/ros2_ws:/home/ros-humble-desktop/ros2_ws/src" \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     --name $CONTAINER_NAME \
